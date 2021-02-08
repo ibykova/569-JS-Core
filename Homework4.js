@@ -54,6 +54,81 @@ function checkAge() {
   }
   console.log(checkAge());
 
-  // Task 3
+// Task 3
+class MonthException {
+	constructor(message) { 
+    this.name = "MonthException";
+    this.message = message;
+   }
+ }
+
+function showMonthName(month) {
+  try {
+    switch (month) {
+      case 0:
+        return "January";
+      case 1:
+        return "February";
+      case 2:
+        return "March";
+      case 3:
+        return "April";
+      case 4:
+        return "May";
+      case 5:
+        return "June";
+      case 6:
+        return "July";
+      case 7:
+        return "August";
+      case 8:
+        return "September";
+      case 9:
+        return "October";
+      case 10:
+        return "November";
+      case 11:
+        return "December";
+
+      default: throw new MonthException("Incorrect month number");
+    }
+  }
+  catch (error) {
+    console.log("Error name: " + error.name);
+    console.log("Error message: " + error.message);
+    return ("There is no month as this: " + month);
+  }
+}
+console.log(showMonthName(11));
 
 
+//Task 4 
+function showUser(id) {
+  try {
+    if (Math.sign(id) === -1) {
+      throw new Error("ID must not be negative: " + id);
+    } else {
+      return { id };
+    }
+  }
+  catch (error) {
+    throw error;
+  }
+}
+console.log(showUser(56));
+
+function showUsers(ids) {
+  let validIds = [];
+  ids.forEach(id => {
+    try {
+      validIds.push(showUser(id))
+
+    } catch (error) {
+      console.log("Error name: " + error.name);
+      console.log("Error message: " + error.message);
+    }
+    // 
+  })
+  return validIds;
+}
+console.log(showUsers([7, -12, 44, 22]));
