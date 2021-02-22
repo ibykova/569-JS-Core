@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!--**************** Task 1 ****************-->
+  <div id="test">First</div>
+  <script>
+    document.getElementById("test").innerHTML = "Last"
+
+    let secondWay = document.getElementsByTagName("div");
+    secondWay = " Last";
+    document.write(secondWay);
+  </script>
+
+
+  <!--**************** Task 2 ****************-->
+  <img id="image" src="/img/dog.jpg">
+
+  <script>
+    document.getElementById("image").src = "img/cat.jpg";
+    alert("We have changed the original image source. Now it's a cat.")
+  </script>
+
+
+  <!--**************** Task 3 ****************-->
+  <h2>Article header</h2>
+  <div id="text">
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <p>Third paragraph</p>
+  </div>
+  <p>Another text</p>
+  <script>
+    let list = document.querySelectorAll("p");
+    document.getElementById("text").innerHTML = "Selector text 0: " + list[0].innerHTML + "<br>"
+    + "Selector text 1: " + list[1].innerHTML + "<br>"
+    + "Selector text 2: " + list[2].innerHTML;
+  </script>
+
+
+  <!--**************** Task 4 ****************-->
+  <ul id="list">
+    <li> 1 </li>
+    <li> 2 </li>
+    <li> 3 </li>
+    <li> 4 </li>
+    <li> 5 </li>
+  </ul>
+
+  <script>
+    // fisrst way of solution
+    let myNodeList = document.querySelectorAll("li");
+    let res = myNodeList.length;
+    console.log("Solution with .length", res - 4, res, res - 3, res - 1, res - 2);
+    alert(res - 4);
+    alert(res);
+    alert(res - 3);
+    alert(res - 1);
+    alert(res - 2);
+
+    // second way of solution
+
+    let element = document.getElementById("list");
+
+    console.log("Solution with 'childNodes' " + element.childNodes[1].innerText + " " +
+      element.childNodes[9].innerText + " " +
+      element.childNodes[3].innerText + " " +
+      element.childNodes[7].innerText + " " +
+      element.childNodes[5].innerText);
+
+    alert(element.childNodes[1].innerText);
+    alert(element.childNodes[9].innerText);
+    alert(element.childNodes[3].innerText);
+    alert(element.childNodes[7].innerText);
+    alert(element.childNodes[5].innerText);
+
+  </script>
+
+  <!--**************** Task 5 ****************-->
+  <h1>I'am a big header!!!</h1>
+  <div id="myDiv">
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <p>Third paragraph</p>
+    <p>Fourth paragraph</p>
+  </div>
+  <ul id="myList">
+    <li>Make</li>
+    <li>me</li>
+    <li>horizontal!</li>
+  </ul>
+  <span>Make me invisible, please!</span>
+
+  <script>
+    document.getElementsByTagName("h1")[0].style.backgroundColor="green";
+    document.getElementById("myDiv").style.fontSize = "14px";
+    document.getElementById("myDiv").childNodes[1].style.fontWeight = "bold";
+    document.getElementById("myDiv").childNodes[3].style.color = "red";
+    document.getElementById("myDiv").childNodes[5].style.textDecoration = "underline";
+    document.getElementById("myDiv").childNodes[7].style.fontStyle = "italic";
+
+    let myList = document.getElementById("myList");
+    myList.style.display = "flex";
+    myList.style.listStyleType = "none";
+
+    document.getElementsByTagName("span")[0].style.display = "none";
+
+  </script>
+
+
+  <!--**************** Task 6 ****************-->
+  <input type="text" id="input1" value="Text1">
+  <input type="text" id="input2" value="Text2">
+
+  <script>
+    let input1 = prompt("Leave your message here", "Example of message 1");
+    let input2 = prompt("Leave your message here", "Example of message 2");
+    
+    document.getElementById("input1").value = input2; 
+    document.getElementById("input2").value = input1;
+  </script>
+
+
+  <!-- ****************Task 7 ****************-->
+  <!-- <iframe id="theFrame" src="about:blank"> -->
+
+    <!-- <script>
+      // I got lost on this task...
+    </script> -->
+
+
+
+</body>
+
+</html>
