@@ -41,8 +41,8 @@
   <script>
     let list = document.querySelectorAll("p");
     document.getElementById("text").innerHTML = "Selector text 0: " + list[0].innerHTML + "<br>"
-    + "Selector text 1: " + list[1].innerHTML + "<br>"
-    + "Selector text 2: " + list[2].innerHTML;
+      + "Selector text 1: " + list[1].innerHTML + "<br>"
+      + "Selector text 2: " + list[2].innerHTML;
   </script>
 
 
@@ -100,7 +100,7 @@
   <span>Make me invisible, please!</span>
 
   <script>
-    document.getElementsByTagName("h1")[0].style.backgroundColor="green";
+    document.getElementsByTagName("h1")[0].style.backgroundColor = "green";
     document.getElementById("myDiv").style.fontSize = "14px";
     document.getElementById("myDiv").childNodes[1].style.fontWeight = "bold";
     document.getElementById("myDiv").childNodes[3].style.color = "red";
@@ -123,18 +123,29 @@
   <script>
     let input1 = prompt("Leave your message here", "Example of message 1");
     let input2 = prompt("Leave your message here", "Example of message 2");
-    
-    document.getElementById("input1").value = input2; 
+
+    document.getElementById("input1").value = input2;
     document.getElementById("input2").value = input1;
   </script>
 
 
   <!-- ****************Task 7 ****************-->
-  <!-- <iframe id="theFrame" src="about:blank"> -->
+  <script>
+    let tag1 = document.createElement("main");
+    tag1.classList.add("mainClass");
 
-    <!-- <script>
-      // I got lost on this task...
-    </script> -->
+    let tag2 = document.createElement("div");
+    tag2.setAttribute("id", "myDiv");
+    tag1.append(tag2);
+
+    let tag3 = document.createElement("p");
+    tag3.innerText = "First paragraph";
+    tag2.append(tag3);
+
+    console.log(tag1);
+    
+
+  </script>
 
 
 
