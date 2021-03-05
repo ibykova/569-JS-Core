@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Task 1 -->
+  <a href="https://google.com">Some link here</a>
+
+  <script>
+    $("a[href^='https://']").attr("target", "blank");
+  </script>
+
+  <!-- Task 2 -->
+  <h2 class="head">Example header1</h2>
+  <h2 class="head">Example header2 <span class="inner">Inner element1</span></h2>
+  <h2>Example header3</h2>
+  <h2 class="head">Example header4 <span>Inner element2</span></h2>
+  <h2>Example header5</h2>
+
+  <script>
+    $("h2.head").css("background", "green").find(".inner").css("fontSize", "35px");
+  </script>
+
+  <!-- Task 3 -->
+  <h3>Header1 (should have been first)</h3>
+  <div>Text 1</div>
+
+  <h3>Header2 (should have been first)</h3>
+  <div>Text 2</div>
+
+  <script>
+    $("h3 + div").each(function () {
+      let $element = $(this);
+      $element.prev().before($element);
+    });
+  </script>
+
+  <!-- Task 4 -->
+  <input type="checkbox">
+  <input type="checkbox">
+  <input type="checkbox">
+  <input type="checkbox">
+  <input type="checkbox">
+  <input type="checkbox">
+
+  <script>
+    let $checkBox = $(":checkbox");
+    $checkBox.on("click", function () {
+      if ($(":checkbox:checked").length == 3) {
+        $checkBox.attr("disabled", "true")
+      }
+    });
+  </script>
+
+</body>
+
+</html>
